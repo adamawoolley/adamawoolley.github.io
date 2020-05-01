@@ -1,0 +1,338 @@
+html {
+    text-size: 20px;
+}
+
+body {
+  background: #faf8ef;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  color: #776e65;
+}
+
+.container {
+  /* center on the page */
+  margin: auto;
+  touch-action: none;
+  width: 500px;
+  height: 1000px;
+}
+
+/* the heading */
+.heading {
+  overflow: auto;
+}
+
+.title {
+  float: left;
+  font-size: 500%;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* the scores */
+
+#score-container, #high-score {
+  float: right;
+  background: #bbada0;
+  color: white;
+  border-radius: 3px;
+  margin: .5%;
+  padding: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 50px;
+  text-align: center;
+  font-size: 170%;
+  line-height: 100%;
+  margin-bottom: 10%;
+  font-weight: bold;
+}
+
+.score-heading {
+  display: block;
+  color: #eee4da;
+  font-size: 50%;
+}
+
+
+.button {
+  background: #8f7a66;
+  padding: 2%;
+  padding-left: 4%;
+  padding-right: 4%;
+  border-radius: 3px;
+  color: #f9f6f2;
+  cursor: pointer;
+}
+
+@keyframes end {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+/* the end game screen */
+#end {
+  position: absolute;
+  z-index: 100;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  background: rgba(238,228,218,.5);
+  animation-name: end;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+}
+
+#game-over {
+  width: 100%;
+  margin-top: 30%;
+  margin-bottom: 10%;
+}
+
+#keep-going, #restart {
+  overflow: auto;
+}
+
+/* the above game
+#above-game {
+  overflow: auto;
+}
+*/
+
+#instructions {
+  float: left;
+  line-height: 250%;
+}
+
+#new-game {
+  float: right;
+}
+
+/* the tile container */
+.game-container {
+  
+  margin-top: 20%;
+  
+  display: grid; /*inline-grid;*/
+  
+  /* the background color */
+  background: #bbada0;
+  
+  /* rounding the corners */
+  border-radius: 6px;
+  
+  /* the size of the container */
+  width: 500px;
+  height: 500px;
+  
+  /* space between box and tiles */
+  padding: 1vmin;
+
+  /* center text and boxes */
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+}
+
+/* tiles */
+
+.tile {
+  margin: 1vmin;
+  /* round the corners */
+  border-radius: 3px;
+  
+  /* change the text */
+  font-weight: bold;
+
+  /* width and height of the boxes */
+  width: 90%;
+  height: 90%;
+  /* the space between it and the box */
+
+  /* use flex box to center text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* the animations */
+
+/* the animation for new tiles */
+@keyframes new {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+@keyframes merged {
+  0% {transform: scale(1)}
+  50% {transform: scale(1.2)}
+  100% {transform: scale(1)}
+}
+
+@keyframes shift-up {
+  0% {padding-top: 0%; margin-bottom: 1vim;}
+  100% {padding-top: 5%; margin-bottom: 37%;}
+}
+
+@keyframes shift-down {
+  0% {padding-bottom: 0%; margin-top: 1vmin;}
+  100% {padding-bottom: 5%; margin-top: 37%}
+}
+
+@keyframes shift-left {
+  0% {padding-left: 0%; margin-right: 1vim;}
+  100% {padding-left: 5%; margin-right: 37%}
+}
+
+@keyframes shift-right {
+  0% {padding-right: 0%; margin-left: 1vim;}
+  100% {padding-right: 5%; margin-left: 1vim;}
+}
+
+.shift-up {
+  animation-name: shift-up;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+
+.blank-tile {
+  background: rgba(238,228,218,.35);
+}
+
+.new-tile {
+  animation-name: new;
+  animation-duration: .27s;
+  animation-fill-mode: backwards;
+}
+
+.merged-tile {
+  animation-name: merged;
+  animation-duration: .2s;
+  animation-fill-mode: backwards;
+}
+
+.tile-2 {
+  background-color: #eee4da;
+  color: black;
+  font-size: 55px;
+}
+
+.tile-4 {
+  background: #ede0c8;
+  color: black;
+  font-size: 55px;
+}
+
+.tile-8 {
+  background: #f2b179;
+  color: #f9f6f2;
+  font-size: 55px;
+}
+
+.tile-16 {
+  background: #f59563;
+  color: #f9f6f2;
+  font-size: 55px;
+}
+
+.tile-32 {
+  background: #f67c5f;
+  color: #f9f6f2;
+  font-size: 55px;
+}
+
+.tile-64 {
+  background: #f65e3b;
+  color: #f9f6f2;
+  font-size: 55px;
+}
+
+.tile-128 {
+  background: #edcf72;
+  color: #f9f6f2;
+  font-size: 45px;
+}
+
+.tile-256 {
+  background: #edcc61;
+  color: #f9f6f2;
+  font-size: 45px;
+}
+
+.tile-512 {
+  background: #edc850;
+  color: #f9f6f2;
+  font-size: 45px;
+}
+
+.tile-1024 {
+  background: #edc53f;
+  color: #f9f6f2;
+  font-size: 35px;
+}
+
+.tile-2048 {
+  background: #edc22e;
+  color: #f9f6f2;
+  font-size: 35px;
+}
+
+/* disable text highlighting */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+
+@media only screen and (max-width: 550px) {
+  .game-container {
+    /* decrease the size of the board container */
+    width: 90vmin;
+    height: 90vmin;
+  }
+  .container {
+    width: 90vmin;
+    height: 100vmin;
+  }
+
+  #end {
+      width: 90vmin;
+      height: 90vmin;
+  }
+
+  .tile-2, .tile-4, .tile-8, .tile-16, .tile-32, .tile-64 {
+      font-size: 10vmin;
+  }
+
+  .tile-128, .tile-256, .tile-512 {
+      font-size: 8vmin;
+  }
+
+  .tile-1024, .tile-2048 {
+      font-size: 6.5vmin;
+  }
+
+  .title {
+      font-size: 14vmin;
+  }
+  /*
+  #score-container, #high-score {
+      width: 10vmin;
+      height: 9vmin;
+  }
+  #score, #high {
+    font-size: 5vmin;
+  }*/
+
+  #new-game {
+      font-size: 3.4vmin;
+  }
+
+  #instructions {
+      font-size: 3.4vmin;
+  }
+}
