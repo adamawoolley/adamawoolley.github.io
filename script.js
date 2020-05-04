@@ -57,6 +57,7 @@ var game = {
     // if you loss you can't keep going so don't give the option
     if (!win) {
       document.getElementById('keep-going').style.display = 'none';
+      document.getElementById('game-over').textContent = 'Game Over';
     } else {
       document.getElementById('game-over').textContent = 'You Win!'
     };
